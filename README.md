@@ -4,7 +4,7 @@
 
 Docker image to run [nuxt.js](nuxtjs.org) projects
 
-> The project must be in the **/usr/local/src** folder and will be available on port **:3000** of the container
+> The project must be in the **/usr/local/src** container folder and will be available on port **:3000** of the container
 
 ## Tags available
 
@@ -38,7 +38,7 @@ docker build . --tag gerardojunior/tap.client.environment
 
 ```bash
 # in your project folder
-docker run -v $(pwd):/usr/share/src -p 3000:3000 gerardojunior/tap.client.environment [nuxt command or sh command]
+docker run -it --rm -v $(pwd):/usr/share/src -p 3000:3000 gerardojunior/tap.client.environment:stable [nuxt command or sh command]
 ```
 ##### With [docker-compose](https://docs.docker.com/compose/)
 
