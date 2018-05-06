@@ -1,4 +1,4 @@
-# Client building environment of the front end of T.A.P 
+# Client building environment of T.A.P 
 
 [![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/gerardojunior/tap.client.environment)
 
@@ -9,11 +9,11 @@ Docker image to run [nuxt.js](nuxtjs.org) projects
 ## Tags available
 
 - stable
-  - node 8.11.1 (carbon)
-  - yarn 1.5.1
+  - [node](https://nodejs.org/) 8.11.1 (carbon)
+  - [yarn](https://yarnpkg.com/) 1.5.1
 - latest
-  - node 8.11.1 (carbon)
-  - yarn 1.5.1
+  - [node](https://nodejs.org/) 8.11.1 (carbon)
+  - [yarn](https://yarnpkg.com/) 1.5.1
 
 ## Installing
 
