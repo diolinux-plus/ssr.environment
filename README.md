@@ -38,7 +38,10 @@ docker build . --tag gerardojunior/tap.client.environment
 
 ```bash
 # in your project folder
-docker run -it --rm -v $(pwd):/usr/share/src -p 3000:3000 gerardojunior/tap.client.environment:stable [nuxt command or sh command]
+docker run -it --rm -v $(pwd):/usr/share/src -p 3000:3000 gerardojunior/tap.client.environment:stable [npm command or sh command]
+
+# or docker-compose
+docker-compose run nuxt [npm command or sh command]
 ```
 ##### With [docker-compose](https://docs.docker.com/compose/)
 
@@ -56,7 +59,7 @@ Create the docker-compose.yml file  in your project folder with:
         target: /usr/share/src
     ports:
       - 3000:3000
-    command: [nuxt command]
+    command: [npm command]
 
 # (...)
 ```
@@ -66,7 +69,7 @@ Create the docker-compose.yml file  in your project folder with:
 ```bash
 docker run -it --rm gerardojunior/tap.client.environment /bin/sh
 # or with docker-compose
-docker-compose exec nuxt /bin/sh
+docker-compose run nuxt /bin/sh
 ```
 
 ### License  
