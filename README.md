@@ -24,21 +24,23 @@ docker pull gerardojunior/tap.client.environment
 
 to build the image you need install the [docker engine](https://www.docker.com/) only
 
+> You can try building with different versions of software with docker args, for example: NODE_VERISON=10.0.0
+
 ```bash
 git clone https://github.com/gerardo-junior/tap.client.environment.git
 cd tap.client.environment
 docker build . --tag gerardojunior/tap.client.environment
 ```
 
-## how to use
+## How to use
 
-### Only with docker command:
+##### Only with docker command:
 
 ```bash
 # in your project folder
-docker run -v $(pwd):/usr/share/src -p 3000:3000 gerardojunior/tap.client.environment [nuxt command or sh command]
+docker run -it --rm -v $(pwd):/usr/share/src -p 3000:3000 gerardojunior/tap.client.environment:stable [nuxt command or sh command]
 ```
-### With [docker-compose](https://docs.docker.com/compose/)
+##### With [docker-compose](https://docs.docker.com/compose/)
 
 Create the docker-compose.yml file  in your project folder with:
 
