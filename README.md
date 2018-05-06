@@ -4,7 +4,7 @@
 
 Docker image to run [nuxt.js](nuxtjs.org) projects
 
-> The project must be in the **/usr/local/src** folder and will be available on port **:3000** of the container
+> The project must be in the **/usr/local/src** container folder and will be available on port **:3000** of the container
 
 ## Tags available
 
