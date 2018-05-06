@@ -10,6 +10,10 @@ if [ ! -d "$(pwd)/node_modules" ] || [ -z "$(ls $(pwd)/node_modules)" ]; then
     fi
 fi
 
+if [ -d "$(pwd)/node_modules" ]; then
+    chgrp -R users $(pwd)/node_modules
+fi
+
 if [ -d "$(pwd)/node_modules/.bin" ]; then
     export PATH=$PATH:$(pwd)/node_modules/.bin
 fi
