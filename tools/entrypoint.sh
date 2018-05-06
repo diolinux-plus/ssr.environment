@@ -15,11 +15,7 @@ if [ ! -d "$(pwd)/.nuxt" ]; then
 fi
 
 if [ ! -z $@ ]; then
-    if [ ! -z "$(which $1)" ]; then
-        exec "$@"
-    else
-    	/usr/local/bin/npm run "$@"
-    fi
+    exec "$@"
 elif [ -e "$(pwd)/package.json" ]; then
     /usr/local/bin/npm run start
 fi
