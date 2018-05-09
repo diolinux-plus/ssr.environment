@@ -18,7 +18,7 @@ if [ ! -d "$(pwd)/.nuxt" ]; then
     /usr/local/bin/npm run build
 fi
 
-if [ ! -z $@ ]; then
+if [ ! -z "$@" ]; then
     exec "$@" 
 elif [ -e "$(pwd)/package.json" ]; then
     /usr/local/bin/npm run start
