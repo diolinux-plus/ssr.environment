@@ -1,4 +1,4 @@
-# Client building environment of T.A.P 
+# Client building environment of twitter analytics panel 
 
 [![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/gerardojunior/tap.client.environment)
 
@@ -15,10 +15,10 @@ Docker image to run [nuxt.js](nuxtjs.org) projects
   - [node](https://nodejs.org/) 8.11.1 (carbon)
   - [yarn](https://yarnpkg.com/) 1.5.1
 
-## Installing
+## Come on, do your tests
 
 ```bash
-docker pull gerardojunior/tap.client.environment
+docker pull gerardojunior/tap.client.environmen:stable
 ```
 ## How to build
 

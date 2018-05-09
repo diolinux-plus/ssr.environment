@@ -10,10 +10,6 @@ if [ ! -d "$(pwd)/node_modules" ] || [ -z "$(ls $(pwd)/node_modules)" ]; then
     fi
 fi
 
-if [ -d "$(pwd)/node_modules" ]; then
-    chgrp -R users $(pwd)/node_modules
-fi
-
 if [ -d "$(pwd)/node_modules/.bin" ]; then
     export PATH=$PATH:$(pwd)/node_modules/.bin
 fi
@@ -22,8 +18,10 @@ if [ ! -d "$(pwd)/.nuxt" ]; then
     /usr/local/bin/npm run build
 fi
 
-if [ ! -z $@ ]; then
-    exec "$@"
+if [ ! -z "$@" ]; then
+    exec "$@" 
 elif [ -e "$(pwd)/package.json" ]; then
     /usr/local/bin/npm run start
 fi
+
+chgrp -R users $(pwd)
