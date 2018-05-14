@@ -21,8 +21,9 @@ ENV COMPILE_DEPS .build-deps \
 RUN apk add --no-cache --virtual ${COMPILE_DEPS}
 
 # Install run app dependencies
-RUN apk add --no-cache git \
-                       libstdc++
+RUN apk --update add --virtual .persistent-deps \
+                               sudo \
+                               libstdc++
 
 RUN cd /tmp
 
@@ -30,8 +31,11 @@ RUN cd /tmp
 RUN mkdir -p /usr/share/src
 
 # Create user node
-RUN addgroup -g 1000 node && \
-    adduser -u 1000 -G node -s /bin/sh -D node
+RUN set -xe && \
+    addgroup -g 1000 node && \
+    adduser -u 1000 -G node -s /bin/sh -D node && \
+    echo "node ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/default && \
+    chown -Rf node /usr/share/src
 
 # Compile and install node
 ENV NODE_SOURCE_URL https://nodejs.org/dist
@@ -59,8 +63,8 @@ RUN for key in \
     make -j$(getconf _NPROCESSORS_ONLN) && \
     make install && \
     cd .. && \
+    npm i npm@latest -g && \
     unset NODE_SOURCE_URL
-
 
 # Compile and install yarn
 ENV YARN_SOURCE_URL https://yarnpkg.com/downloads
@@ -82,7 +86,7 @@ RUN for key in \
 
 # Cleanup system
 RUN apk del ${COMPILE_DEPS} && \
-    rm -Rf /var/cache/apk/* /tmp/* && \
+    rm -Rf /var/cache/apk/* /tmp/* $HOME/* && \
     unset NODE_VERSION \
           YARN_VERSION
 
