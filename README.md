@@ -29,7 +29,7 @@ to build the image you need install the [docker engine](https://www.docker.com/)
 ```bash
 git clone https://github.com/gerardo-junior/tap.client.environment.git
 cd tap.client.environment
-docker build . --tag gerardojunior/tap.client.environment
+docker build . --tag gerardojunior/tap.client.environment:stable
 ```
 
 ## How to use
