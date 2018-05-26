@@ -1,6 +1,6 @@
-# Client building environment of twitter analytics panel 
+# Client building environment of diolinux pus 
 
-[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/gerardojunior/tap.client.environment)
+![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/diolinux/ssr.environment)
 
 Docker image to run [nuxt.js](nuxtjs.org) projects
 
@@ -18,7 +18,7 @@ Docker image to run [nuxt.js](nuxtjs.org) projects
 ## Come on, do your tests
 
 ```bash
-docker pull gerardojunior/tap.client.environmen:stable
+docker pull diolinux/ssr.environmen:stable
 ```
 ## How to build
 
@@ -27,9 +27,9 @@ to build the image you need install the [docker engine](https://www.docker.com/)
 > You can try building with different versions of software with docker args, for example: NODE_VERISON=10.0.0
 
 ```bash
-git clone https://github.com/gerardo-junior/tap.client.environment.git
-cd tap.client.environment
-docker build . --tag gerardojunior/tap.client.environment:stable
+git clone https://github.com/diolinux-plus/ssr.environment.git
+cd ssr.environment
+docker build . --tag diolinux/ssr.environment:stable
 ```
 
 ## How to use
@@ -38,7 +38,7 @@ docker build . --tag gerardojunior/tap.client.environment:stable
 
 ```bash
 # in your project folder
-docker run -it --rm -v $(pwd):/usr/share/src -p 3000:3000 gerardojunior/tap.client.environment:stable [command]
+docker run -it --rm -v $(pwd):/usr/share/src -p 3000:3000 diolinux/ssr.environment:stable [command]
 
 # or docker-compose
 docker-compose run nuxt [command]
@@ -51,7 +51,7 @@ Create the docker-compose.yml file  in your project folder with:
 # (...)
 
   nuxt:
-    image: gerardojunior/tap.client.environment:stable
+    image: diolinux/ssr.environment:stable
     restart: on-failure
     volumes:
       - type: bind
@@ -67,7 +67,7 @@ Create the docker-compose.yml file  in your project folder with:
 ## How to enter image shell
  
 ```bash
-docker run -it --rm gerardojunior/tap.client.environment /bin/sh
+docker run -it --rm diolinux/ssr.environment /bin/sh
 # or with docker-compose
 docker-compose run nuxt /bin/sh
 ```
